@@ -21,15 +21,19 @@ const SudokuCtx = createContext();
 
 export default function App() {
   const [ wallet, setWallet ] = useState('');
-  useEffect(() => {
-    if (window.ethereum) {
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then((res) => setWallet(res[0]));
-    } else {
-      alert("install metamask extension!!");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.ethereum) {
+  //     window.ethereum
+  //       .request({ method: "eth_requestAccounts" })
+  //       .then((res) =>
+  //        {
+  //         console.log(res)
+  //         setWallet(res[0])
+  //       });
+  //   } else {
+  //     alert("install metamask extension!!");
+  //   }
+  // }, [wallet]);
 
   return (
     <SudokuCtx.Provider value={wallet}>

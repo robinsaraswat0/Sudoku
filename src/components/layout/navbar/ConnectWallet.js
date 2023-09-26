@@ -30,7 +30,7 @@ export default function ConnectWallet(props) {
     >
       <p className="self-center">
         {
-          address ? address : 
+          address ? `${address.substr(0,7)}...${address.substr(-4,100)}` : 
           "Connect Wallet"
         }
       </p>
